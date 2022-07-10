@@ -7,8 +7,6 @@ const ExpenseItem = (props) => {
   const clickHandler = () => {
     setTitle('Updates !');
   };
-  console.log('Pensuada Langbiang');
-
   return (
     <div className="expense-item">
       <div className="expense-left">

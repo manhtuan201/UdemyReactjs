@@ -1,40 +1,69 @@
-import { Button, Input } from "antd";
+import { Button, Form, Input } from "antd";
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
-  const [userInput, setUserInput] = useState({
-    expenseTitle: "",
-    expenseAmount: "",
-    expenseDate: "",
-  });
-  const handlerInput = (e) => {
-    setUserInput({
-      ...userInput,
-      expenseDate: e.target.value,
-    });
+const ExpenseForm = (props) => {
+  const [enteredTitle, setEnderedTitle] = useState("");
+  const [enteredAmount, setEnderedAmount] = useState("");
+  const [enteredDate, setEnteredDate] = useState("");
+  const titleChangeHandler = (event) => {
+    setEnderedTitle(event.target.value);
   };
-  console.log(userInput);
+  const amountChangeHandler = (event) => {
+    setEnderedAmount(event.target.value);
+  };
+  const dateChangeHandler = (event) => {
+    setEnteredDate(event.target.value);
+  };
+  const handlerInput = (e) => {
+    e.preventDefault();
+    const expenseData = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: enteredDate,
+      luke: '123',
+    };
+    props.onSaveExpenseData()
+  };
   return (
-    <>
+    <Form>
       <div className="expense-form">
         <div className="expense-form-item">
           <p>Title</p>
-          <Input className="expense-input" onChange={handlerInput} />
+          <Input
+            name="title"
+            className="expense-input"
+            onChange={titleChangeHandler}
+          />
         </div>
         <div className="expense-form-item">
           <p>Amount</p>
-          <Input className="expense-input" onChange={handlerInput} />
+          <Input
+            name="amount"
+            className="expense-input"
+            onChange={amountChangeHandler}
+          />
         </div>
         <div className="expense-form-item">
           <p>Date</p>
-          <Input className="expense-input" onChange={handlerInput} />
+          <Input
+            name="date"
+            className="expense-input"
+            onChange={dateChangeHandler}
+          />
         </div>
       </div>
       <div className="expense-form-action">
-        <Button className="expense-btn">Add Expense</Button>
+        <Button
+          onClick={handlerInput}
+          type="submit"
+          htmlType="submit"
+          className="expense-btn"
+        >
+          Add Expense
+        </Button>
       </div>
-    </>
+    </Form>
   );
 };
 export default ExpenseForm;
