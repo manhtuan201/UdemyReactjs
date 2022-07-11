@@ -26,10 +26,14 @@ const App = () => {
       expenseAmount: "$894.67",
     },
   ];
+  const AddExpense = (expense) => {
+    console.log('In App.js');
+    console.log(expense);
+  };
   return (
     <>
       <h1 style={{ textAlign: "center" }}>Hello</h1>
-      <NewExpense />
+      <NewExpense addExpense={AddExpense} />
       <Expense items={expenseData} />
     </>
   );

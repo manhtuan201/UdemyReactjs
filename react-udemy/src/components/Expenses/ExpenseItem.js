@@ -5,13 +5,20 @@ import { Button } from "antd";
 const ExpenseItem = (props) => {
   const [title, setTitle] = useState(props.title);
   const clickHandler = () => {
-    setTitle('Updates !');
+    setTitle("Updates !");
   };
+  const test = (dataTime) => {
+    const expenseData = {
+      ...dataTime,
+    };
+    console.log(expenseData);
+  };
+
   return (
     <div className="expense-item">
       <div className="expense-left">
         <p>
-          <ExpenseItemDate date={props.date} />
+          <ExpenseItemDate addBip={test} date={props.date} />
         </p>
         <h2>{title}</h2>
       </div>
