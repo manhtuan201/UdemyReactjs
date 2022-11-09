@@ -1,40 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Expense from "./components/Expenses/Expense";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
-  const expenseData = [
+  const DUMP_EXPENSE = [
     {
-      expenseDate: "January 28th 2021 ",
-      expenseTitle: "Car Insurance",
+      expenseDate: {
+        date: "09",
+        month: "Aprir",
+        year: "2022",
+      },
+      expenseTitle: "Car Insurance 1",
       expenseAmount: "$294.67",
     },
     {
-      expenseDate: "February 28th 2021 ",
-      expenseTitle: "Car Insurance",
+      expenseDate: {
+        date: "08",
+        month: "January",
+        year: "2022",
+      },
+      expenseTitle: "Car Insurance 2",
       expenseAmount: "$8794.67",
     },
     {
-      expenseDate: "March 28th 2021 ",
-      expenseTitle: "Car Insurance",
+      expenseDate: {
+        date: "07",
+        month: "July",
+        year: "2022",
+      },
+      expenseTitle: "Car Insurance 3",
       expenseAmount: "$194.67",
     },
     {
-      expenseDate: "April 28th 2021 ",
-      expenseTitle: "Car Insurance",
+      expenseDate: {
+        date: "06",
+        month: "June",
+        year: "2022",
+      },
+      expenseTitle: "Car Insurance 4",
       expenseAmount: "$894.67",
     },
   ];
-  const AddExpense = (expense) => {
-    console.log('In App.js');
-    console.log(expense);
+  const [expenses, setExpenses] = useState(DUMP_EXPENSE);
+  const AddExpense = (expenseData) => {
+    setExpenses((prev) => {
+      return [expenseData, ...prev];
+    });
   };
   return (
     <>
       <h1 style={{ textAlign: "center" }}>Hello</h1>
       <NewExpense addExpense={AddExpense} />
-      <Expense items={expenseData} />
+      <Expense items={DUMP_EXPENSE} />
     </>
   );
 };

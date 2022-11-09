@@ -11,8 +11,8 @@ const ExpenseItem = (props) => {
     const expenseData = {
       ...dataTime,
     };
-    console.log(expenseData);
   };
+  console.log("props",props)
 
   return (
     <div className="expense-item">
