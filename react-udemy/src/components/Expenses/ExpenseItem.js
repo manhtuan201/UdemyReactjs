@@ -12,7 +12,6 @@ const ExpenseItem = (props) => {
       ...dataTime,
     };
   };
-  console.log("props",props)
 
   return (
     <div className="expense-item">
@@ -20,7 +19,7 @@ const ExpenseItem = (props) => {
         <p>
           <ExpenseItemDate addBip={test} date={props.date} />
         </p>
-        <h2>{title}</h2>
+        <h2>{props.title}</h2>
       </div>
       <div className="expense-item__description">
         <div className="expense-item_price">{props.amount}</div>

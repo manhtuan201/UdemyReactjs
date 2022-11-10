@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import ExpensesFilter from "./ExpenseFilter";
 import "./Expense.css";
 const Expense = (props) => {
+  console.log("3")
   const [filteredYear, setFilteredYear] = useState('2020')
   const filterChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
@@ -17,9 +18,9 @@ const Expense = (props) => {
 
         {props.items.map((item, index) => (
           <ExpenseItem
-            date={item.expenseDate}
-            title={item.expenseTitle}
-            amount={item.expenseAmount}
+            date={item.date}
+            title={item.title}
+            amount={item.amount}
           />
         ))}
       </div>
