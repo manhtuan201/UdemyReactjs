@@ -16,24 +16,53 @@ const DUMP_EXPENSE = [
     date: new Date(2022, 5, 12),
   },
   {
+    id: "e2",
+    title: "Car Insurance 2",
+    amount: "$8794.67",
+    date: new Date(2022, 5, 12),
+  },
+  {
+    id: "e2",
+    title: "Car Insurance 2",
+    amount: "$8794.67",
+    date: new Date(2022, 5, 12),
+  },
+  {
+    id: "e2",
+    title: "Car Insurance 2",
+    amount: "$8794.67",
+    date: new Date(2022, 5, 12),
+  },
+  {
+    id: "e2",
+    title: "Car Insurance 2",
+    amount: "$8794.67",
+    date: new Date(2022, 5, 12),
+  },
+  {
     id: "e3",
     title: "Car Insurance 3",
     amount: "$194.67",
-    date: new Date(2023, 5, 12),
+    date: new Date(2020, 5, 12),
   },
   {
     id: "e4",
     title: "Car Insurance 4",
     amount: "$894.67",
-    date: new Date(2024, 5, 12),
+    date: new Date(2019, 5, 12),
+  },
+  {
+    id: "e4",
+    title: "Car Insurance 4",
+    amount: "$894.67",
+    date: new Date(2019, 5, 12),
   },
 ];
 const App = () => {
   const [expenses, setExpenses] = useState(DUMP_EXPENSE);
   const AddExpense = (expenseData) => {
-    console.log("1")
-    setExpenses((prev) => {
-      return [expenseData, ...prev];
+    setExpenses((pre) => {
+      return [expenseData, ...pre];
     });
   };
   return (

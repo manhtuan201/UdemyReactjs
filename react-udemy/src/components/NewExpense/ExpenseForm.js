@@ -16,13 +16,15 @@ const ExpenseForm = (props) => {
     setEnteredDate(event.target.value);
   };
   const handlerInput = (e) => {
-    const date = new Date(enteredDate)
+    const date = new Date(enteredDate);
     const expenseData = {
       title: enteredTitle,
       amount: enteredAmount,
       date: date,
-    };
-    props.onSavehandleData(expenseData);
+    }
+    props.onSaveHandleData(expenseData);
+    console.log("expenseData",expenseData);
+   
   };
   return (
     <Form>
