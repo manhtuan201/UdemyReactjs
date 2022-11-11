@@ -8,7 +8,8 @@ const NewExpense = (props) => {
       id:Math.random().toString(),
       ...enteredExpenseData,
     }
-    props.AddExpense(newExpense)
+    props.addExpense(newExpense)
+    console.log("🚀 ~ file: NewExpense.js ~ line 12 ~ saveExpenseDataHandler ~ newExpense", newExpense)
   };
   return (
     <>
