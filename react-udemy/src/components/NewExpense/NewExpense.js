@@ -4,18 +4,17 @@ import ExpenseForm from "./ExpenseForm";
 import "./NewExpense.css";
 const NewExpense = (props) => {
   const saveExpenseDataHandler = (enteredExpenseData) => {
-    console.log("2")
-    const expenseData = {
-      id: Math.random().toString(),
+    const newExpense = {
+      id:Math.random().toString(),
       ...enteredExpenseData,
-    };
-    console.log(expenseData);
-    props.addExpense(expenseData);
+    }
+    props.addExpense(newExpense)
+    console.log("🚀 ~ file: NewExpense.js ~ line 12 ~ saveExpenseDataHandler ~ newExpense", newExpense)
   };
   return (
     <>
       <div className="expense">
-        <ExpenseForm onSavehandleData={saveExpenseDataHandler} />
+        <ExpenseForm onSaveHandleData={saveExpenseDataHandler} />
       </div>
     </>
   );
