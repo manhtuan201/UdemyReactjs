@@ -1,0 +1,30 @@
+.expense-form {
+  display: grid;
+  grid-template-columns: 300px 300px;
+}
+.expense-form-item {
+  text-align: left;
+}
+.expense-input {
+  border-radius: 7px;
+  background-color: white;
+  box-shadow: 0 1px 8px (0, 0, 0, 0.25);
+  width: 93%;
+  height: 30%;
+  border-color: white;
+}
+p {
+  font-weight: 700;
+}
+.expense-form-action {
+  display: flex;
+  justify-content: flex-end;
+}
+.expense-btn{
+    background-color: #4b0082;
+    color: white;
+    width: 115px;
+    height: 50px;
+    border-color: #4b0082;
+    border-radius: 12px;
+}
